@@ -8,13 +8,18 @@ namespace LexiconMiniProject03
 {
     public abstract class Asset
     {
+        public Asset() { }
+        public int Id { get; set; }
         public string Model { get; set; }
         public DateTime PurchaseDate { get; set; }
         public decimal PriceUSD { get; set; } 
+
+        public int OfficeId { get; set; }
         public Office OfficeLocation { get; set; }
 
         public Asset(string model, DateTime purchaseDate, decimal priceUSD, Office office)
         {
+
             Model = model;
             PurchaseDate = purchaseDate;
             PriceUSD = priceUSD;
@@ -36,6 +41,9 @@ namespace LexiconMiniProject03
     }
     public class Computer : Asset
     {
+        public Computer()
+        {
+        }
         public Computer(string model, DateTime purchaseDate, decimal priceUSD, Office office)
             : base(model, purchaseDate, priceUSD, office) { }
 
@@ -47,6 +55,7 @@ namespace LexiconMiniProject03
 
     public class Phone : Asset
     {
+        public Phone() { }
         public Phone(string model, DateTime purchaseDate, decimal priceUSD, Office office)
             : base(model, purchaseDate, priceUSD, office) { }
 
